@@ -6,6 +6,7 @@ function JobForm({ onClose }) {
         <button onClick={onClose}>Close</button>
         <h1> JOB FORM </h1>
         {/* Your form content */}
+        test
       </div>
     )
   }
