@@ -5,7 +5,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 10px;
-  width: 250px; /* Adjust width as needed */
+  width: 250px; 
   box-sizing: border-box;
 }
 
@@ -34,9 +34,9 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none; /* This is for <a> elements to remove underline */
-  font-size: 0.85rem; /* Reduced font size for smaller button text */
-  display: inline-block; /* To apply padding and centering for <a> elements */
-  margin: 0 4px; /* Add margin to ensure buttons don't touch */
+  font-size: 0.85rem; 
+  display: inline-block; 
+  margin: 0 4px; 
 }
 
 .btn:hover {
