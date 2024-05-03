@@ -21,12 +21,7 @@ function JobCard({
       <p>Status: {status}</p>
       <p>Contact: {contact}</p>
       <div className="buttons">
-        <a
-          href={postinglink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
+        <a href={postinglink} target="_blank" rel="noopener noreferrer" className="btn">
           Application Link
         </a>
         <button className="btn" onClick={handleExpand}>

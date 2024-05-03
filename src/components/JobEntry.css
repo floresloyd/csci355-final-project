@@ -6,10 +6,10 @@
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
   background-color: #f0f0f0; /* Light grey background similar to the second image */
-  margin-top: 10px;
-  margin-left: -20px;
-  margin-right: 10px;
   border-radius: 10px;
+  width: 90%;
+  margin-top: 5px
+  
 }
 
 .job-entry div {
