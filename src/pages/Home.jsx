@@ -118,7 +118,7 @@ function Home() {
       </button>
 
       <Modal isOpen={isModalOpen} onClose={toggleModal}>
-        <JobForm onClose={toggleModal} />
+        <JobForm onClose={toggleModal} userId={currentUserId} />
       </Modal>
         <button
           className="sort-btn"
