@@ -22,6 +22,7 @@ function Login() {
       .catch((error) => {
         console.error(error.message);
         // Here, you would handle the error, e.g., display a login error message to the user
+        alert("Invalid Credentials")
       });
   };
 

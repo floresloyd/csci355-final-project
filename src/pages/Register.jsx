@@ -19,6 +19,7 @@ function Register() {
       (data) => {
         console.log(data, "authData");
         // If we login succesfully, we can login
+        alert("Account Creation Complete!")
         reroute("/");
       }
     );
