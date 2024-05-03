@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import About from './pages/About';
 import ForgotPassword from './pages/ForgotPassword';
 import ProtectedRoute from './components/ProtectedRoute';
 import './app.css';
@@ -32,6 +33,14 @@ const MainApp = () => {
           element={
             <ProtectedRoute>
               <Statistics/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/about" 
+          element={
+            <ProtectedRoute>
+              <About />
             </ProtectedRoute>
           } 
         />

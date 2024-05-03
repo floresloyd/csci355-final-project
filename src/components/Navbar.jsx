@@ -25,6 +25,10 @@ function Navbar() {
         <a href="/stats" className="nav-item">
           Statistics
         </a>
+        <a href="/about" className="nav-item">
+          About
+        </a>
+
       </div>
       <button className="signout-btn" onClick={handleSignOut}>
         {" "}

@@ -41,6 +41,10 @@ function Login() {
             No need to venture out into rough waters to keep track of all those
             job applications. With JobDock, <br />
             anchor all your applications to one place⚓
+            <br />
+            Made By: Loyd Flores & Ehab Abdalla
+            <br />
+            <a href="/about">ABOUT</a>
           </p>
         </div>
         <div className="form-section">
