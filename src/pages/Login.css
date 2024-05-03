@@ -80,6 +80,29 @@ input {
 }
 
 .signin-content-button {
+
+    position: relative;
+    overflow: hidden; /* Ensures the ripple does not overflow the button boundaries */
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7); /* Light ripple for visibility on dark button */
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none; /* Prevents ripple from interfering with button functionality */
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+=======
     padding: 15px;
     background-color: #333; /* Button background color */
     color: white; /* Button text color */

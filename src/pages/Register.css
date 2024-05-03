@@ -61,3 +61,14 @@ body{
     font-size: 16px;
     color: white; /* Button text color */
 }
+
+
+
+.generate-password{
+    margin-top: 5px;
+    width: 100%;
+}
+
+.pw-strength{
+    border-radius: 50%;
+}
