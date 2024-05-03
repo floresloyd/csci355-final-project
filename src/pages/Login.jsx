@@ -3,9 +3,35 @@ import { userLoginDatabase } from "../FirebaseClient";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"; // Import the CSS file
 import logo from "../assets/jobdock-logo.png";
+import { useEffect, useRef, useState } from "react";
 
 function Login() {
   const reroute = useNavigate();
+  // AutoText variables
+  const [autoText, setAutoText] = useState("Welcome");
+  const textAutoComplete = " to JobDock!";
+  const index = useRef(1);
+  let speed = 60;
+  // eslint-disable-next-line no-unused-vars
+  const [restartDelay, setRestartDelay] = useState(5000);
+
+
+  useEffect(() => {
+    if (index.current > textAutoComplete.length) {
+      setTimeout(() => {
+        index.current = 1;
+        setAutoText("Welcome");
+      }, restartDelay);
+    } else {
+      const timer = setTimeout(() => {
+        setAutoText("Welcome" + textAutoComplete.slice(0, index.current));
+        index.current++;
+      }, speed);
+      return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoText, restartDelay]);
+
 
   const handleSignIn = (e) => {
     e.preventDefault(); // This prevents the default form submission behavior. Does not refresh the page
@@ -30,6 +56,26 @@ function Login() {
     reroute("/forgot");
   };
 
+  // SIGN IN BUTTON RIPPLE EFFECT EVENT HANDLER
+  const createRipple = (event) => {
+    const button = event.currentTarget;
+
+    // Create a new span element for the ripple effect
+    const ripple = document.createElement("span");
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    // Set the size and position of the ripple
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    ripple.className = 'ripple';
+
+    // Add the ripple element to the button and remove it after animation
+    button.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600); // Corresponds with the animation duration
+  };
+
   return (
     <div className="login-container">
       <div className="login-content">
@@ -44,7 +90,7 @@ function Login() {
           </p>
         </div>
         <div className="form-section">
-          <h1>Welcome to JobDock!</h1>
+          <h1 id='auto-text'>{autoText}</h1>
           <form onSubmit={handleSignIn}>
             <input name="email" type="email" placeholder="email" required />
             <input
@@ -53,15 +99,15 @@ function Login() {
               placeholder="password"
               required
             />
-            <div className="form-footer">
-              <button type="submit" className="signin-content-button">
-                Sign In
+          <div className="form-footer">
+              <button type="submit" className="signin-content-button" onClick={createRipple}>
+                  Sign In
               </button>
               <button type="button" onClick={() => reroute("/register")}>
-                Register
+                  Register
               </button>
               <button type="button" onClick={handleForgotPassword}>
-                Forgot Password?
+                  Forgot Password?
               </button>
             </div>
           </form>

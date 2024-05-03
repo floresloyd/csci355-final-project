@@ -14,12 +14,17 @@ import "./Home.css";
 import Modal from "../components/Modal.jsx";
 import JobForm from "../components/JobForm.jsx";
 import AIChatbot from '../components/AIChatbot'; 
+import searchIcon from "../assets/search-icon.png"
 
 function Home() {
   const [jobs, setJobs] = useState([]); // Used to hold all jobs in the database
   const [viewOption, setViewOption] = useState("jobcard"); // Handles view options
   const formRef = useRef(null); // Reference to the form element
   const auth = getAuth(); // used to access current logged in user
+
+  // Handle expand search
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   const [isModalOpen, setIsModalOpen] = useState(false); // State that handles if the modal (Greys background and centers job form) is open or not 
 
@@ -110,6 +115,25 @@ function Home() {
   };
 
 
+  // Handles search expand and search functionality 
+  const handleSearchClick = () => {
+    if (!isSearchExpanded || searchInput === "") {
+      // Toggle expansion if not expanded or no input
+      setIsSearchExpanded(!isSearchExpanded);
+    } else {
+      // Trigger search if expanded and input is not empty
+      alert(`Searching for: ${searchInput}`);
+    }
+  };
+
+  const handleSearchClose = () => {
+    // Close and clear input if open with no text
+    if (isSearchExpanded && searchInput === "") {
+      setIsSearchExpanded(false);
+    }
+  };
+
+
   return (
     <div className="home-container">
       <div className="controls">
@@ -130,21 +154,22 @@ function Home() {
         </button>
 
         <div className="search-sort">
-          <input
-            type="text"
-            name="search"
-            placeholder="Search"
-            className="search-box"
-          />
-          <button
-            className="search-btn"
-            onClick={() => {
-              alert("Search");
-            }}
-          >
-            Search
-          </button>
-        </div>
+        <input
+          type="text"
+          name="search"
+          placeholder="Search"
+          className={`search-box ${isSearchExpanded ? "active" : ""}`}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          onBlur={handleSearchClose}
+        />
+        <button
+          className={`search-btn ${isSearchExpanded ? "active" : ""}`}
+          onClick={handleSearchClick}
+        >
+          <img src={searchIcon} alt="search icon" className="searchIcon" />
+        </button>
+      </div>
       </div>
 
       {/* Dropdown for view options */}
@@ -191,3 +216,5 @@ function Home() {
 }
 
 export default Home;
+
+

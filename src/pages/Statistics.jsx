@@ -1,4 +1,3 @@
-import React from 'react';
 import AIChatbot from '../components/AIChatbot'; // Import the AIChatbot component
 
 function Statistics() {
