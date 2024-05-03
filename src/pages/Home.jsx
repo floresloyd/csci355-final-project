@@ -13,6 +13,7 @@ import JobEntry from "../components/JobEntry";
 import "./Home.css";
 import Modal from "../components/Modal.jsx";
 import JobForm from "../components/JobForm.jsx";
+import AIChatbot from '../components/AIChatbot'; 
 
 function Home() {
   const [jobs, setJobs] = useState([]); // Used to hold all jobs in the database
@@ -183,6 +184,8 @@ function Home() {
           )
         )}
       </div>
+        {/*AICHATBOT*/}
+        <AIChatbot/>
     </div>
   );
 }

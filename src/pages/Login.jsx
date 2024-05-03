@@ -39,7 +39,7 @@ function Login() {
           <p className="tagline">
             No need to venture out into rough waters to keep track of all those
             job applications. With JobDock, <br />
-            anchor all you r applications to one place⚓
+            anchor all your applications to one place⚓
           </p>
         </div>
         <div className="form-section">

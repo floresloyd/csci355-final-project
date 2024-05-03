@@ -1,0 +1,146 @@
+/* Chatbot Button */
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Primary blue shade */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Ensure it's above most other elements */
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .chatbot-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Chatbot Window */
+  .chatbot-window {
+    position: fixed;
+    bottom: 90px; /* Positioned above the button */
+    right: 40px;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1050;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .chatbot-window-open {
+    display: flex;
+  }
+  
+  /* Chatbot messages container */
+  .chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px; /* Space between messages */
+    padding: 8px;
+    background: #f1f1f1; /* Light grey background */
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Slight border for definition */
+  }
+  
+  .message.user {
+    background: #007bff; /* Blue background for user messages */
+    color: white; /* White text for contrast */
+    text-align: left; /* Align user text to the right */
+  }
+  
+  .message.bot {
+    background: #e2e2e2; /* Slightly darker background for bot messages */
+    text-align: left; /* Align bot text to the left */
+  }
+  
+  /* Input area */
+  .chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc; /* Light grey border */
+  }
+  
+  .chat-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px; /* Rounded corners for input */
+    margin-right: 10px; /* Space between input and send button */
+  }
+  
+  .chat-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007bff; /* Blue shadow to match the button */
+  }
+  
+  /* Send Button Style */
+  .send-btn {
+    background-color: #007bff; /* Matching blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer; /* Cursor indicates clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .send-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.4s infinite both;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .faq-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 366px 0 0 1px; /* Added margin-top: 5px; */
+    cursor: pointer;
+  }
+  
+  .faq-button:hover {
+    background-color: #0056b3;
+  }
+  
