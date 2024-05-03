@@ -87,10 +87,6 @@ function Login() {
             No need to venture out into rough waters to keep track of all those
             job applications. With JobDock, <br />
             anchor all your applications to one place⚓
-            <br />
-            Made By: Loyd Flores & Ehab Abdalla
-            <br />
-            <a href="/about" className="about-link-button">ABOUT</a>
           </p>
         </div>
         <div className="form-section">
@@ -117,6 +113,12 @@ function Login() {
           </form>
         </div>
       </div>
+      <div className="about-description">
+          <h3>Developers: Loyd Flores & Ehab Abdalla </h3>
+          <a className="about-link" href="/about">About</a>
+
+      </div>
+
     </div>
   );
 }

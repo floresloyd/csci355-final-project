@@ -22,9 +22,10 @@ function Navbar() {
         <a href="/home" className="nav-item">
           Home
         </a>
-        <a href="/stats" className="nav-item">
+        {/**<a href="/stats" className="nav-item">
           Statistics
         </a>
+        */}
         <a href="/about" className="nav-item">
           About
         </a>
