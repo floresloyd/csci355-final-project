@@ -44,7 +44,7 @@ function Login() {
             <br />
             Made By: Loyd Flores & Ehab Abdalla
             <br />
-            <a href="/about">ABOUT</a>
+            <a href="/about" className="about-link-button">ABOUT</a>
           </p>
         </div>
         <div className="form-section">
